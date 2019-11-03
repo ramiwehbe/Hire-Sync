@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import JobInputs from "./manage-jobs"
+import Posting from "./job-posting"
+
 class ApplicantProfile extends Component {
     constructor() {
         super();
@@ -12,25 +14,27 @@ class ApplicantProfile extends Component {
             yearsExperience: [{ username: ''}],
             achievements: [{ username: ''}]
         };
+        console.log("Applicant Skillset: ", Posting)
     }
       
-   
+    
       
     render() {    
         return (
-            console.log("Applicant Skillset: ", JobInputs.skillset),
+            
             <form>
                 <label
                 type="text"
                 value={this.props.username}
                 />
                 <label>
-                Skill: {this.skillset}
-                <h2 value={JobInputs} />
+                Skill: {Posting}
+                <h2 value={Posting} />
                 </label>
                 
                 <button>Submit Profile</button>
             </form>
+            
         )
     }
 }
